@@ -1,13 +1,9 @@
 package people;
 
 import nature.Describable;
-import nature.Environment;
-import nature.Places;
 
 public abstract class Person implements Describable, Participle {
     protected String name;
-    protected String view;
-    //protected Places place;
 
     public Person(String name) {
         this.name = name;
@@ -15,6 +11,33 @@ public abstract class Person implements Describable, Participle {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true; //если ссылки на обьекты равны
+        }
+        if (other == null) {
+            return false; //если ссылка нулевая
+        }
+        if (getClass() != other.getClass()) {
+            return false; //сравнение классов this и other
+        }
+        Person that = (Person) other;
+        //сравнение всех полей
+        return (getName() == that.getName() );
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+        /// в учебнике на странице 222
+    }
+
+    @Override
+    public String toString(){
+        return this.getClass().getName() + '{' + "name= " + this.getName() + '}';
     }
 
 }

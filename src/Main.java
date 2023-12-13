@@ -26,7 +26,6 @@ public class Main {
         sun.getDescription(Verbs.PUSH);
         city.getDescription(Verbs.SEEM);
 
-        //, Verbs.SHAKE
         snowstorm.participle("В воздухе");
         snowstorm.getDescription(Verbs.LIGHT);
 
