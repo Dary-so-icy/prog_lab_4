@@ -3,8 +3,6 @@ package people;
 import nature.Environment;
 import nature.Places;
 
-import java.util.Locale;
-
 public class We extends Person {
     protected String participle;
 
@@ -34,6 +32,11 @@ public class We extends Person {
     public void waiting_for_something(Environment mystery, Verbs verb){
         System.out.println(this.getName() + ' ' + Verbs.WALK.getVerb() + " " + Places.LABYRINTH.getPlace() +
                 ", где " + mystery.getName() + " " + verb.getVerb());
+
+    }
+
+    public void stare(Environment mystery){
+        System.out.println(this.getName() + ' ' + Verbs.LOOK.getVerb() + " " + mystery.getAdj() + " " + mystery.getName());
 
     }
 

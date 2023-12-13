@@ -16,7 +16,12 @@ public class Building extends Environment {
 
     @Override
     public void getDescription(Verbs verb){
-        System.out.println(this.adding + ", " + this.getAdj() + ' ' + this.getName() + " " + verb.getVerb());
-    }
+        if (this.adding != null) {
+            System.out.println(this.adding + ", " + this.getAdj() + ' ' + this.getName() + " " + verb.getVerb());
+        }
+        else{
+            System.out.println( this.getAdj() + ' ' + this.getName() + " " + verb.getVerb());
+        }
+        }
 
 }

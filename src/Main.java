@@ -9,6 +9,10 @@ public class Main {
         We we = new We("мы");
         Building construction = new Building("постройки", "не менее громадные");
         Building ruins = new Building("здания", "низкие");
+        Snow mud = new Snow("дымка", "туманная");
+        Jungle jungle = new Jungle("джунгли", "фантастические каменные");
+        Sun sun = new Sun("лучи солнца", "Косые низкие антарктические");
+        Building city = new Building("город", "Древний и угрюмый");
 
         we.participle("Поднявшись на вершину башни");
         we.discover(rocks);
@@ -19,9 +23,8 @@ public class Main {
         ruins.participle("На востоке, где дремали вдали занесенные снегом вершины великих гор");
         ruins.getDescription(Verbs.DECAY);
 
-        // написсатть сюда 3 предложение
-        //Косые лучи низкого антарктического полночного солнца пробивались сквозь
-        // строй покосившихся руин, Город казался еще древнее и угрюмее.
+        sun.getDescription(Verbs.PUSH);
+        city.getDescription(Verbs.SEEM);
 
         //, Verbs.SHAKE
         snowstorm.participle("В воздухе");
@@ -48,7 +51,15 @@ public class Main {
         we.participle("На полпути");
         we.getDescription(Verbs.STOP);
 
-        Snow mud = new Snow("дымка", "туманная");
+        we.stare(jungle);
+
+        mud.participle("Затягивавшая западную сторону небосвода");
+        mud.getDescription(Verbs.DISAPPEAR);
+
+        snowstorm.participle("Сливаясь в некий диковинный узор");
+        snowstorm.getDescription(Verbs.TOP);
+
+        System.out.println(Places.SECRET.getPlace() + " " + Verbs.APPEAR.getVerb());
     }
 
 }

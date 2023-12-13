@@ -2,10 +2,10 @@ package nature;
 
 import people.Verbs;
 
-public class Snow extends Environment {
+public class Sun extends Environment{
     protected String participle; //причастие, деепричатие или какое-нибудь дополнение
 
-    public Snow(String name, String adj) {
+    public Sun(String name, String adj) {
         super(name, adj);
     }
 
