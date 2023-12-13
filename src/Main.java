@@ -47,6 +47,8 @@ public class Main {
 
         we.participle("На полпути");
         we.getDescription(Verbs.STOP);
+
+        Snow mud = new Snow("дымка", "туманная");
     }
 
 }
