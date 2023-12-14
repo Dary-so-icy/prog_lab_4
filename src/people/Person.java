@@ -33,7 +33,6 @@ public abstract class Person implements Describable, Participle {
     @Override
     public int hashCode() {
         return Objects.hash(name);
-        /// в учебнике на странице 222
     }
 
     @Override

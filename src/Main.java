@@ -3,7 +3,6 @@ import nature.*;
 
 public class Main {
     public static void main(String[] args) {
-        //in person delite comm
         Snow rocks = new Snow("крошево", "замерзшее каменное");
         Airplane plane = new Airplane("самолет", "наш");
         Snow snowstorm = new Snow("пыль", "снежная");
