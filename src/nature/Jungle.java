@@ -2,8 +2,9 @@ package nature;
 
 import people.Verbs;
 
-public class Jungle extends Environment{
+public class Jungle extends Environment {
     protected String participle;
+
     public Jungle(String name, String adj) {
         super(name, adj);
     }

@@ -14,7 +14,6 @@ public class Snow extends Environment {
         this.participle = word;
     }
 
-    @Override
     public void getDescription(Verbs verb) {
         if (this.participle != null) {
             System.out.println(this.participle + ", " + this.getAdj() + " " + this.getName() + " " + verb.getVerb());

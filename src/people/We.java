@@ -10,42 +10,44 @@ public class We extends Person {
         super(name);
     }
 
-    @Override
     public void participle(String word) {
-        this.participle = word;
+        this.participle = word; // причастия или дополнения у экземпляра класса
     }
+
 
     public void discover(Environment surround) {
         System.out.println(this.participle + ", " + this.getName() + ' ' + Verbs.DISCOVER.getVerb() + " должны " +
                 Verbs.DOWN.getVerb() + " " + surround.getAdj() + " " + surround.getName());
     }
-    public void get_down(String road){
-        System.out.println(this.participle + ", " + this.getName() + ' ' + Verbs.DOWN.getVerb() + " " + road );
+
+    public void get_down(String road) {
+        System.out.println(this.participle + ", " + this.getName() + ' ' + Verbs.DOWN.getVerb() + " " + road);
     }
-    public void button_up_jacket(){
+
+    public void button_up_jacket() {
         System.out.println(this.participle + ", " + this.getName() + ' ' + Verbs.BUTTON.getVerb() + " пуговицы на куртках");
     }
-    public void start(String doing_what){
+
+    public void start(String doing_what) {
         System.out.println(this.getName() + ' ' + Verbs.START.getVerb() + " " + doing_what);
     }
 
-    public void waiting_for_something(Environment mystery, Verbs verb){
+    public void waiting_for_something(Environment mystery, Verbs verb) {
         System.out.println(this.getName() + ' ' + Verbs.WALK.getVerb() + " " + Places.LABYRINTH.getPlace() +
                 ", где " + mystery.getName() + " " + verb.getVerb());
 
     }
 
-    public void stare(Environment mystery){
+    public void stare(Environment mystery) {
         System.out.println(this.getName() + ' ' + Verbs.LOOK.getVerb() + " " + mystery.getAdj() + " " + mystery.getName());
 
     }
 
     @Override
     public void getDescription(Verbs verb) {
-        if (this.participle != null){
+        if (this.participle != null) {
             System.out.println(this.participle + " " + this.getName() + " " + verb.getVerb());
-        }
-        else{
+        } else {
             System.out.println(this.getName() + " " + verb.getVerb());
         }
     }

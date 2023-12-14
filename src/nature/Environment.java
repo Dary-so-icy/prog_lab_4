@@ -1,7 +1,8 @@
 package nature;
 
 import people.Participle;
-import people.Verbs;
+
+import java.util.Objects;
 
 public abstract class Environment implements Participle, Describable {
     protected String name;
@@ -25,12 +26,7 @@ public abstract class Environment implements Participle, Describable {
         return adj;
     }
 
-//    @Override
-//    public void action(Verbs verb){
-//        this.verb = verb;
-//    }
 
-    ///eqvals
     @Override
     public boolean equals(Object other) {
         if (this == other) {
@@ -49,8 +45,7 @@ public abstract class Environment implements Participle, Describable {
 
     @Override
     public int hashCode() {
-        return name.hashCode();
-        /// в учебнике на странице 222
+        return Objects.hash(name, adj);
     }
 
     @Override

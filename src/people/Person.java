@@ -1,5 +1,6 @@
 package people;
 
+import java.util.Objects;
 import nature.Describable;
 
 public abstract class Person implements Describable, Participle {
@@ -31,7 +32,7 @@ public abstract class Person implements Describable, Participle {
 
     @Override
     public int hashCode() {
-        return name.hashCode();
+        return Objects.hash(name);
         /// в учебнике на странице 222
     }
 

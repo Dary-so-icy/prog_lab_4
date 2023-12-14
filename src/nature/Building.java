@@ -10,18 +10,17 @@ public class Building extends Environment {
     }
 
     @Override
-    public void participle(String word){
-        this.adding = word;
+    public void participle(String word) {
+        this.adding = word; // какое то дополнение к класу билдинг, его характеристики
     }
 
     @Override
-    public void getDescription(Verbs verb){
+    public void getDescription(Verbs verb) {
         if (this.adding != null) {
             System.out.println(this.adding + ", " + this.getAdj() + ' ' + this.getName() + " " + verb.getVerb());
+        } else {
+            System.out.println(this.getAdj() + ' ' + this.getName() + " " + verb.getVerb());
         }
-        else{
-            System.out.println( this.getAdj() + ' ' + this.getName() + " " + verb.getVerb());
-        }
-        }
+    }
 
 }
