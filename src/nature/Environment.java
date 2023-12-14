@@ -7,7 +7,6 @@ import java.util.Objects;
 public abstract class Environment implements Participle, Describable {
     protected String name;
     private String adj;
-    //protected Verbs verb;
 
     public Environment(String name) {
         this.name = name;
