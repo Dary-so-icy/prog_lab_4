@@ -17,7 +17,7 @@ public class We extends Person {
 
     public void discover(Environment surround) {
         System.out.println(this.participle + ", " + this.getName() + ' ' + Verbs.DISCOVER.getVerb() + " должны " +
-                Verbs.DOWN.getVerb() + " " + surround.getAdj() + " " + surround.getName());
+                Verbs.DOWN.getVerb() + " " + surround.getName());
     }
 
     public void get_down(String road) {
@@ -39,16 +39,18 @@ public class We extends Person {
     }
 
     public void stare(Environment mystery) {
-        System.out.println(this.getName() + ' ' + Verbs.LOOK.getVerb() + " " + mystery.getAdj() + " " + mystery.getName());
+        System.out.println(this.getName() + ' ' + Verbs.LOOK.getVerb() + " " + mystery.getName());
 
     }
 
     @Override
-    public void getDescription(Verbs verb) {
+    public void getDescription(String verb) {
         if (this.participle != null) {
-            System.out.println(this.participle + " " + this.getName() + " " + verb.getVerb());
+            System.out.println(this.participle + " " + this.getName() + " " + verb);
         } else {
-            System.out.println(this.getName() + " " + verb.getVerb());
+            System.out.println(this.getName() + " " + verb);
         }
     }
+
+
 }

@@ -6,25 +6,35 @@ import java.util.Objects;
 
 public abstract class Environment implements Participle, Describable {
     protected String name;
-    private String adj;
+    protected int height;
+    protected int lighting;
 
-    public Environment(String name) {
+    public Environment(String name, int height ) {
         this.name = name;
-    }
-
-    public Environment(String name, String adj) {
-        this.name = name;
-        this.adj = adj;
+        this.height = height;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getAdj() {
-        return adj;
+    public int getH() {
+        return this.height;
     }
 
+    public void setlighting(int degree){
+        this.lighting = degree;
+    }
+
+    public void getLight(Environment item){
+        if(this.lighting < 0){
+            System.out.println("Oсвещаемость " + this.name + " уменьшилось из-за " + item.getName());
+        } else if (this.lighting == 0) {
+            System.out.println(this.name + " освещаемость не изменилась");
+        } else {
+            System.out.println("Oсвещаемость " + this.name + " увеличилась из-за " + item.getName());
+        }
+    }
 
     @Override
     public boolean equals(Object other) {
@@ -39,17 +49,17 @@ public abstract class Environment implements Participle, Describable {
         }
         Environment that = (Environment) other;
         //сравнение всех полей
-        return (getName() == that.getName() && getAdj() == that.getAdj());
+        return (getName() == that.getName() && getH() == that.getH());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, adj);
+        return Objects.hash(name, height);
     }
 
     @Override
     public String toString(){
-        return this.getClass().getName() + '{' + "name= " + this.getName() + ", adjictive=" + this.adj + '}';
+        return this.getClass().getName() + '{' + "name= " + this.getName() + ", adjictive=" + this.height + '}';
     }
 
 

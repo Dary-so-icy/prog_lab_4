@@ -5,8 +5,18 @@ import people.Verbs;
 public class Building extends Environment {
     protected String adding;
 
-    public Building(String name, String adj) {
-        super(name, adj);
+    public Building(String name, int height) {
+        super(name, height);
+    }
+
+    public void top(int x) {
+        if (x > 0) {
+            this.getDescription("выситься");
+        } else if (x < 0) {
+            this.getDescription("уменьшались");
+        } else {
+            this.getDescription("Оставались преждними ");
+        }
     }
 
     @Override
@@ -14,12 +24,11 @@ public class Building extends Environment {
         this.adding = word; // какое то дополнение к класу билдинг, его характеристики
     }
 
-    @Override
-    public void getDescription(Verbs verb) {
+    public void getDescription(String verb) {
         if (this.adding != null) {
-            System.out.println(this.adding + ", " + this.getAdj() + ' ' + this.getName() + " " + verb.getVerb());
+            System.out.println(this.adding + ", " + this.getName() + " " + verb);
         } else {
-            System.out.println(this.getAdj() + ' ' + this.getName() + " " + verb.getVerb());
+            System.out.println(this.getName() + " " + verb);
         }
     }
 

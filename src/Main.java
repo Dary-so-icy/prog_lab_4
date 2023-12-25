@@ -3,62 +3,66 @@ import nature.*;
 
 public class Main {
     public static void main(String[] args) {
-        Snow rocks = new Snow("крошево", "замерзшее каменное");
-        Airplane plane = new Airplane("самолет", "наш");
-        Snow snowstorm = new Snow("пыль", "снежная");
+        //глаголы
+        // создать объекты
+
+        // может удалить нафиг энум places
+        Snow rocks = new Snow("замерзшее каменное крошево", 10);
+        Airplane plane = new Airplane("самолет", 0);
+        Snow snowstorm = new Snow("снежная пыль", 50);
         We we = new We("мы");
-        Building construction = new Building("постройки", "не менее громадные");
-        Building ruins = new Building("здания", "низкие");
-        Snow mud = new Snow("дымка", "туманная");
-        Jungle jungle = new Jungle("джунгли", "фантастические каменные");
-        Sun sun = new Sun("лучи солнца", "Косые низкие антарктические");
-        Building city = new Building("город", "Древний и угрюмый");
+        Building construction = new Building("постройки", 52);
+        Building ruins = new Building("руины", 2);
+        Snow mud = new Snow("туманная дымка", 0);
+        Jungle jungle = new Jungle("джунгли", 15);
+        Sun sun = new Sun("лучи солнца", 100);
+        Building city = new Building("город", 75);
+
 
         we.participle("Поднявшись на вершину башни");
         we.discover(rocks);
 
-        construction.participle("На западе");
-        construction.getDescription(Verbs.TOP);
+        construction.participle(Location.WEST.getLocation());
+        construction.top(+100); // можно еще как то с местами поиграть и энумами, указывать где находятся на западе или на востоке...
+        construction.participle(Location.EAST.getLocation());
+        construction.top(-100);//как то надо разграничить конструкции что бы не было будто 1 обект
 
-        ruins.participle("На востоке, где дремали вдали занесенные снегом вершины великих гор");
-        ruins.getDescription(Verbs.DECAY);
+        //city.; казался древнее и угрюмее
+        // можно поиграться с энумами и как то сделать метод апиаранс типо как выглядят предеметы вокруг
+        sun.shine(ruins, +10);
 
-        sun.getDescription(Verbs.PUSH);
-        city.getDescription(Verbs.SEEM);
-
-        snowstorm.participle("В воздухе");
-        snowstorm.getDescription(Verbs.LIGHT);
-
-        System.out.println(Places.COLD.getPlace() + " " + Verbs.BONES.getVerb());
 
         we.participle("Устало опустив рюкзаки, которые лишь чудом сохранились во время нашего отчаянного бегства");
+        //это нахуя
+        //короче предлагаю сделать обьект куртки и там у них в конструнторе пуговицы и их положение типо
+        //застегнуты, растегнуты, сломаны
+        //и может это как то передавать тип 1 заст 0 растег -1 сломнаны
+        //ну или как то через тру форл
+        //ну или тупо в лоб изменять их состояние
+        // точно метод туда нужен чтобы этт все дело контолировать
         we.button_up_jacket();
+        //мб сделать еще рюкзаки и их спускать ахххп
+        //не ну а че делать то если говно выходит надо выкручиваться
 
         we.start("спуск");
 
         we.waiting_for_something(plane, Verbs.WAIT);
+        plane.get_high();
 
-        we.participle("За весь путь");
-        we.getDescription(Verbs.SILENT);
 
         we.participle("Меньше чем через четверть часа");
         we.get_down("крутая древняя терасса");
 
-        plane.participle("Оттуда");
-        plane.getDescription(Verbs.SEE);
+        plane.get_high();
 
-        we.participle("На полпути");
-        we.getDescription(Verbs.STOP);
 
-        we.stare(jungle);
+        we.stare(jungle); // а джунгли то где? позадиии это тоже можно как то через энумы указания мест сделать
 
-        mud.participle("Затягивавшая западную сторону небосвода");
-        mud.getDescription(Verbs.DISAPPEAR);
+        snowstorm.setlighting(+15);
+        sun.shine(snowstorm, -50);
 
-        snowstorm.participle("Сливаясь в некий диковинный узор");
-        snowstorm.getDescription(Verbs.TOP);
 
-        System.out.println(Places.SECRET.getPlace() + " " + Verbs.APPEAR.getVerb());
     }
+
 
 }
