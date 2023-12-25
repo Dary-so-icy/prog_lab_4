@@ -28,7 +28,7 @@ public abstract class Environment implements Participle, Describable {
 
     public void getLight(Environment item){
         if(this.lighting < 0){
-            System.out.println("Oсвещаемость " + this.name + " уменьшилось из-за " + item.getName());
+            System.out.println(this.name + " рассеялась в " + item.getName());
         } else if (this.lighting == 0) {
             System.out.println(this.name + " освещаемость не изменилась");
         } else {

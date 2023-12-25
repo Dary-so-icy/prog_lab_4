@@ -1,52 +1,45 @@
+import Items.Bags;
+import Items.Material;
 import people.*;
 import nature.*;
 
 public class Main {
     public static void main(String[] args) {
-        //глаголы
-        // создать объекты
 
-        // может удалить нафиг энум places
         Snow rocks = new Snow("замерзшее каменное крошево", 10);
         Airplane plane = new Airplane("самолет", 0);
         Snow snowstorm = new Snow("снежная пыль", 50);
         We we = new We("мы");
-        Building construction = new Building("постройки", 52);
-        Building ruins = new Building("руины", 2);
+
+        Building construction = new Building("постройки", 52, 74);
+        Building house = new Building("здания", 40, 40);
+        Building ruins = new Building("руины", 2, 15);
+        Building city = new Building("город", 75, 80);
+
         Snow mud = new Snow("туманная дымка", 0);
         Jungle jungle = new Jungle("джунгли", 15);
         Sun sun = new Sun("лучи солнца", 100);
-        Building city = new Building("город", 75);
 
+        Bags bag = new Bags("рюкзаки", 50, true, Material.CLOTH);
 
         we.participle("Поднявшись на вершину башни");
         we.discover(rocks);
 
         construction.participle(Location.WEST.getLocation());
-        construction.top(+100); // можно еще как то с местами поиграть и энумами, указывать где находятся на западе или на востоке...
-        construction.participle(Location.EAST.getLocation());
-        construction.top(-100);//как то надо разграничить конструкции что бы не было будто 1 обект
+        construction.top(+100);
+        house.participle(Location.EAST.getLocation());
+        house.top(-100);
 
-        //city.; казался древнее и угрюмее
-        // можно поиграться с энумами и как то сделать метод апиаранс типо как выглядят предеметы вокруг
+        city.appearance(Status.STRANGE);
         sun.shine(ruins, +10);
 
 
-        we.participle("Устало опустив рюкзаки, которые лишь чудом сохранились во время нашего отчаянного бегства");
-        //это нахуя
-        //короче предлагаю сделать обьект куртки и там у них в конструнторе пуговицы и их положение типо
-        //застегнуты, растегнуты, сломаны
-        //и может это как то передавать тип 1 заст 0 растег -1 сломнаны
-        //ну или как то через тру форл
-        //ну или тупо в лоб изменять их состояние
-        // точно метод туда нужен чтобы этт все дело контолировать
+        bag.changePosition();
+        bag.getPosition();
         we.button_up_jacket();
-        //мб сделать еще рюкзаки и их спускать ахххп
-        //не ну а че делать то если говно выходит надо выкручиваться
 
         we.start("спуск");
 
-        we.waiting_for_something(plane, Verbs.WAIT);
         plane.get_high();
 
 
@@ -55,14 +48,31 @@ public class Main {
 
         plane.get_high();
 
+        jungle.participle(Location.BEHIND.getLocation());
+        jungle.getDescription("остались");
+        we.stare(jungle);
 
-        we.stare(jungle); // а джунгли то где? позадиии это тоже можно как то через энумы указания мест сделать
 
-        snowstorm.setlighting(+15);
-        sun.shine(snowstorm, -50);
+        mud.participle(Location.WEST.getLocation());
+        mud.setlighting(-100);
+        sun.shine(mud, -50);
+
+        snowstorm.change_height(+25);
+        snowstorm.direction();
+
+
+
+        // Operation ne;
+        // ne = (x, y) -> ((x * 2) + (y * 2));
+        // int res = ne.summator(2, 5);
+        // System.out.print(res);
 
 
     }
+
+//    interface Operation{
+//        int summator(int x, int y);
+//    }
 
 
 }

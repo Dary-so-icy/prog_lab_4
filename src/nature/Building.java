@@ -1,12 +1,26 @@
 package nature;
 
-import people.Verbs;
+
 
 public class Building extends Environment {
     protected String adding;
 
-    public Building(String name, int height) {
+    public Building(String name, int height, int condition) {
         super(name, height);
+        if (condition > 75) {
+            this.name = Status.BRILLIANT.getStatus() + " " + this.name;
+        } else if (50 < condition) {
+            this.name = Status.GOOD.getStatus() + " " + this.name;
+        } else if (25 < condition) {
+            this.name = Status.SOSO.getStatus() + " " + this.name;
+        } else {
+            this.name = Status.TERRIBLE.getStatus() + " " + this.name;
+        }
+
+    }
+
+    public void appearance(Status status){
+        System.out.println(this.name + " выглядеть: " + status.getStatus());
     }
 
     public void top(int x) {

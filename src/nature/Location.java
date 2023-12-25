@@ -1,10 +1,12 @@
 package nature;
 
 public enum Location {
-    EAST("восток"),
-    WEST("запад"),
-    SOUTH("юг"),
-    NORTH("север");
+    AHEAD("впереди"),
+    BEHIND("сзади"),
+    EAST("на востоке"),
+    WEST("на западе"),
+    SOUTH("на юге"),
+    NORTH("на севере");
     private final String loc;
 
     Location(String loc) {
