@@ -60,19 +60,9 @@ public class Main {
         snowstorm.change_height(+25);
         snowstorm.direction();
 
-
-
-        // Operation ne;
-        // ne = (x, y) -> ((x * 2) + (y * 2));
-        // int res = ne.summator(2, 5);
-        // System.out.print(res);
-
-
     }
 
-//    interface Operation{
-//        int summator(int x, int y);
-//    }
+
 
 
 }

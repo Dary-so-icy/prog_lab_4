@@ -12,6 +12,9 @@ public enum Location {
     Location(String loc) {
         this.loc = loc;
     }
+    Location(){
+        this.loc = "this";
+    }
 
     public String getLocation() {
         return loc;

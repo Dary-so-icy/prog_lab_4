@@ -3,14 +3,17 @@ package Items;
 import java.util.Objects;
 
 public abstract class Item {
-    protected int size;
-    protected String name;
+    private final int size;
+    private final String name;
 
     public Item(String name, int size) {
         this.size = size;
         this.name = name;
     }
 
+    public String getName(){
+        return this.name;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

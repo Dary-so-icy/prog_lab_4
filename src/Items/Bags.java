@@ -19,7 +19,7 @@ public class Bags extends Item {
         } else {
             position = "опущены на землю";
         }
-        System.out.println(this.made_of.getMaterial() + " " + this.name + " " + position);
+        System.out.println(this.made_of.getMaterial() + " " + this.getName() + " " + position);
     }
 
 

@@ -5,8 +5,6 @@ public enum Verbs {
     DOWN("спускаться по"),
     BUTTON("застегнули"),
     START("начали"),
-    WALK("побрели по"),
-    WAIT("дожидался"),
     LOOK("посмотрели на");
     private final String verb;
 
