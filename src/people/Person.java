@@ -3,7 +3,7 @@ package people;
 import java.util.Objects;
 import nature.Describable;
 
-public abstract class Person implements Describable, Participle {
+public abstract class Person implements Describable {
     protected String name;
 
     public Person(String name) {

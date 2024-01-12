@@ -1,6 +1,7 @@
 package nature;
 
 
+import exeptions.WrongHeightExeption;
 
 public class Building extends Environment {
     protected String adding;
@@ -23,7 +24,7 @@ public class Building extends Environment {
         System.out.println(this.name + " выглядеть: " + status.getStatus());
     }
 
-    public void top(int x) {
+    public void top(int x){
         if (x > 0) {
             this.getDescription("выситься");
         } else if (x < 0) {

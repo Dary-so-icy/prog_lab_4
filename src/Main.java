@@ -1,10 +1,11 @@
-import Items.Bags;
-import Items.Material;
+import Items.*;
 import people.*;
 import nature.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        Denford den = new Denford("Дэнчик");
 
         Snow rocks = new Snow("замерзшее каменное крошево", 10);
         Airplane plane = new Airplane("самолет", 0);
@@ -15,12 +16,21 @@ public class Main {
         Building house = new Building("здания", 40, 40);
         Building ruins = new Building("руины", 2, 15);
         Building city = new Building("город", 75, 80);
+        Building tower = new Building("цилиндрическая башня", 100, 50);
 
         Snow mud = new Snow("туманная дымка", 0);
         Jungle jungle = new Jungle("джунгли", 15);
-        Sun sun = new Sun("лучи солнца", 100);
+        Sun sun = new Sun("лучи солнца", 100, 1000);
 
         Bags bag = new Bags("рюкзаки", 50, true, Material.CLOTH);
+
+        Coat coat = new Coat("куртка", 150);
+
+        den.remember("детали бегства", false);
+        den.remember("громадная пещера", true);
+        den.remember("коридоры и залы мертвого города как во сне", true);
+        we.getDescription("отрезвились из-за: " + sun.getName());
+        sun.shine(tower);
 
         we.participle("Поднявшись на вершину башни");
         we.discover(rocks);
@@ -31,12 +41,13 @@ public class Main {
         house.top(-100);
 
         city.appearance(Status.STRANGE);
-        sun.shine(ruins, +10);
+        sun.shine(ruins);
 
 
         bag.changePosition();
         bag.getPosition();
-        we.button_up_jacket();
+        coat.getInfoButtons();
+        //we.button_up_jacket();
 
         we.start("спуск");
 
@@ -54,8 +65,9 @@ public class Main {
 
 
         mud.participle(Location.WEST.getLocation());
-        mud.setlighting(-100);
-        sun.shine(mud, -50);
+        sun.changeBr(-1000);
+        sun.shine(mud); // я уже просто блоять запуталась что тут и как работает но вроде у меня лучи вложенный класс а как тогда ярокость я меняю и почему и зачем стоько вопросов
+        
 
         snowstorm.change_height(+25);
         snowstorm.direction();

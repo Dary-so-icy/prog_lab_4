@@ -1,5 +1,6 @@
 package nature;
 
+import exeptions.WrongHeightExeption;
 import people.Participle;
 
 import java.util.Objects;
@@ -7,12 +8,15 @@ import java.util.Objects;
 public abstract class Environment implements Participle, Describable {
     protected String name;
     protected int height;
-    protected int lighting;
 
-    public Environment(String name, int height ) {
+    public Environment(String name, int height) throws WrongHeightExeption {
         this.name = name;
+        if (height < 0) {
+            throw new WrongHeightExeption();
+        }
         this.height = height;
     }
+
 
     public String getName() {
         return name;
@@ -22,19 +26,6 @@ public abstract class Environment implements Participle, Describable {
         return this.height;
     }
 
-    public void setlighting(int degree){
-        this.lighting = degree;
-    }
-
-    public void getLight(Environment item){
-        if(this.lighting < 0){
-            System.out.println(this.name + " рассеялась в " + item.getName());
-        } else if (this.lighting == 0) {
-            System.out.println(this.name + " освещаемость не изменилась");
-        } else {
-            System.out.println("Oсвещаемость " + this.name + " увеличилась из-за " + item.getName());
-        }
-    }
 
     @Override
     public boolean equals(Object other) {

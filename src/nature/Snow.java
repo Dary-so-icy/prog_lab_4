@@ -3,7 +3,7 @@ package nature;
 
 public class Snow extends Environment {
     protected String participle; //причастие, деепричатие или какое-нибудь дополнение
-
+    private static final int figure = 6;
     public Snow(String name, int height) {
         super(name, height);
     }
@@ -32,6 +32,18 @@ public class Snow extends Environment {
             this.getDescription("начал падать");
         } else {
             this.getDescription("продлолжил лететь ");
+        }
+    }
+
+    // вложенный static класс
+    public static class Snowflake{
+        private String name;
+
+        Snowflake(){
+            this.name = "Снежинка";
+        }
+        public static int getLines(){
+            return figure;
         }
     }
 }

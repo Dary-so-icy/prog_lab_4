@@ -2,7 +2,7 @@ package people;
 
 import nature.Environment;
 
-public class We extends Person {
+public class We extends Person implements Participle{
     protected String participle;
 
     public We(String name) {
