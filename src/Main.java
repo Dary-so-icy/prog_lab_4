@@ -1,9 +1,15 @@
 import Items.*;
+//import exeptions.BusyPeople;
+import exeptions.BusyPeople;
 import people.*;
 import nature.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws BusyPeople {
+        //вложенный класс snow
+        // внутренний класс sun
+        // анонимус coat
+        // локальный
 
         Denford den = new Denford("Дэнчик");
 
@@ -17,8 +23,9 @@ public class Main {
         Building ruins = new Building("руины", 2, 15);
         Building city = new Building("город", 75, 80);
         Building tower = new Building("цилиндрическая башня", 100, 50);
+        Building bas = new Building("широкие барельефы", 320, 100);
 
-        Snow mud = new Snow("туманная дымка", 0);
+        Snow mud = new Snow("туманная дымка", 10);
         Jungle jungle = new Jungle("джунгли", 15);
         Sun sun = new Sun("лучи солнца", 100, 1000);
 
@@ -29,8 +36,21 @@ public class Main {
         den.remember("детали бегства", false);
         den.remember("громадная пещера", true);
         den.remember("коридоры и залы мертвого города как во сне", true);
+
+        we.aboutWorld();
+
         we.getDescription("отрезвились из-за: " + sun.getName());
         sun.shine(tower);
+
+        we.start("взбираться по пандусу");
+        we.tired();
+        we.start("выбираться наружу");
+        we.stare(sun);
+
+        we.tired();
+
+        we.goodbye(city.getName());
+        bas.appearance(Status.GORGES);
 
         we.participle("Поднявшись на вершину башни");
         we.discover(rocks);
@@ -45,9 +65,7 @@ public class Main {
 
 
         bag.changePosition();
-        bag.getPosition();
         coat.getInfoButtons();
-        //we.button_up_jacket();
 
         we.start("спуск");
 

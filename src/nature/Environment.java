@@ -12,14 +12,14 @@ public abstract class Environment implements Participle, Describable {
     public Environment(String name, int height) throws WrongHeightExeption {
         this.name = name;
         if (height < 0) {
-            throw new WrongHeightExeption();
+            throw new WrongHeightExeption(this.name);
         }
         this.height = height;
     }
 
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getH() {

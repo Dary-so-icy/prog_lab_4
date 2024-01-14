@@ -4,13 +4,15 @@ package nature;
 public class Snow extends Environment {
     protected String participle; //причастие, деепричатие или какое-нибудь дополнение
     private static final int figure = 6;
+
     public Snow(String name, int height) {
         super(name, height);
     }
 
-    public void change_height(int h){
+    public void change_height(int h) {
         this.height += h;
     }
+
     @Override
     public void participle(String word) {
         this.participle = word;
@@ -36,14 +38,20 @@ public class Snow extends Environment {
     }
 
     // вложенный static класс
-    public static class Snowflake{
-        private String name;
+    public static class Snowflake {
+        private final String name = "Снежинка";
+        private int id;
 
-        Snowflake(){
-            this.name = "Снежинка";
+        Snowflake(int i) {
+            this.id = i;
         }
-        public static int getLines(){
+
+        public static int getLines() {
             return figure;
+        }
+
+        public String getName() {
+            return name;
         }
     }
 }

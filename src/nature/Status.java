@@ -3,6 +3,7 @@ package nature;
 public enum Status {
     STRANGE("угрюмый"),
     OLD("старый"),
+    GORGES("героическими"),
     BRILLIANT("не поврежденный"),
     GOOD("устойчиныe"),
     SOSO("покосившиеся"),

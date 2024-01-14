@@ -1,12 +1,16 @@
 package people;
 
+import exeptions.BusyPeople;
 import nature.Environment;
 
-public class We extends Person implements Participle{
+public class We extends Person implements Participle {
     protected String participle;
+    protected boolean isDoingSth = false;
+    protected String busy;
 
     public We(String name) {
         super(name);
+        //this.isDoingSth = false;
     }
 
     public void participle(String word) {
@@ -23,16 +27,46 @@ public class We extends Person implements Participle{
         System.out.println(this.participle + ", " + this.getName() + ' ' + Verbs.DOWN.getVerb() + " " + road);
     }
 
-    public void button_up_jacket() {
-        System.out.println(this.participle + ", " + this.getName() + ' ' + Verbs.BUTTON.getVerb() + " пуговицы на куртках");
+    public void start(String doing_what) throws BusyPeople { // checked exeption
+        if (isDoingSth) {
+            throw new BusyPeople();
+        }
+        isDoingSth = true;
+        busy = doing_what;
+        System.out.println(this.getName() + " " + Verbs.START.getVerb() + " " + busy);
     }
 
-    public void start(String doing_what) {
-        System.out.println(this.getName() + ' ' + Verbs.START.getVerb() + " " + doing_what);
+    public void aboutWorld() {
+
+        class World {
+            private final String time = "время";
+            private final String orientation = "ориентация";
+            private final String name = "призрачный мир";
+            private final String surname = "неизвестное измерение";
+
+            public void disappear() {
+                System.out.println(this.name + "(он же " + this.surname + "), где сейчас находимся " + We.this.getName()
+                        + ", будто не имеет " + this.time + " и " + this.orientation);
+            }
+        }
+
+        World world = new World();
+        world.disappear();
+
+    }
+
+    public void tired() {
+        System.out.println(this.name + " закончили: " + busy + ". Время отдохнуть!");
+        busy = null;
+        isDoingSth = false;
     }
 
     public void stare(Environment mystery) {
         System.out.println(this.getName() + ' ' + Verbs.LOOK.getVerb() + ": " + mystery.getName());
+    }
+
+    public void goodbye(String ob) {
+        System.out.println(this.name + " попрощались с " + ob);
     }
 
     @Override

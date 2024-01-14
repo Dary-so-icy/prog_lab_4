@@ -8,7 +8,7 @@ public class Sun extends Environment{
         ray = new Ray(am);
     }
 
-    public class Ray{ // вложенный класс
+    public class Ray{ // внутренний класс
         private int brightness;
         public Ray(int br){
             this.brightness = br;

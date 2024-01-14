@@ -1,12 +1,15 @@
 package Items;
 
+import exeptions.WrongSizeExeption;
+
 import java.util.Objects;
 
 public abstract class Item {
     private final int size;
     private final String name;
 
-    public Item(String name, int size) {
+    public Item(String name, int size) throws WrongSizeExeption {
+        if(size < 0){throw new WrongSizeExeption(name);}
         this.size = size;
         this.name = name;
     }
